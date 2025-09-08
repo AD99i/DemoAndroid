@@ -8,9 +8,12 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
@@ -29,20 +32,31 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
+@Composable
+fun BackgroundImage() {
+    Image(
+        painter = painterResource(id = R.drawable.mobile_bg_01),
+        contentDescription = "Background",
+        contentScale = ContentScale.Crop,
+        modifier = Modifier.fillMaxSize()
+    )
+}
 @Composable
 fun MainPage() {
     DemoAndroidTheme {
         Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
             Box(modifier = Modifier.padding(innerPadding)) {
-                Image(
-                    painter = painterResource(id = R.drawable.mobile_bg_01),
-                    contentDescription = "Background",
-                    contentScale = ContentScale.Crop,
-                    modifier = Modifier.fillMaxSize()
-                )
-                Column() {
-                    Text("Hello Chocolatine", modifier = Modifier.padding(20.dp))
+                BackgroundImage()
+                Column(modifier = Modifier.fillMaxSize().padding(60.dp).padding(top = 300.dp)) {
+                    Text("Hello Chocolatine")
                     Text("Incroyable Hulk")
+                    TextField(onValueChange = {}, value = "", modifier = Modifier.fillMaxWidth(), placeholder = {
+                        Text("Veuillez saisir votre texte")
+                    })
+                    ElevatedButton(onClick = {}, modifier = Modifier.fillMaxWidth()) {
+                        Text("Envoyer le formulaire")
+                    }
                 }
             }
         }
