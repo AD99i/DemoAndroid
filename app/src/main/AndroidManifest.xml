@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DemoAndroid">
         <activity
-            android:name=".MainActivity"
+            android:name=".demo_1.MainActivity"
             android:exported="true"
             android:label="@string/title_activity_main"
             android:theme="@style/Theme.DemoAndroid" />
