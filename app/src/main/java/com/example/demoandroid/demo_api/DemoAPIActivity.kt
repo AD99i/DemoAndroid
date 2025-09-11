@@ -30,6 +30,7 @@ class DemoAPIActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        viewModel = MovieViewModel()
 
 
         setContent {
