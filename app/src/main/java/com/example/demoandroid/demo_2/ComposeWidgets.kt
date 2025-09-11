@@ -1,4 +1,4 @@
-package com.example.demoandroid.ui.theme
+package com.example.demoandroid.demo_2
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.BorderStroke
@@ -25,12 +25,11 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.demoandroid.R
-import com.example.demoandroid.demo_1.BackgroundImage
 
 
 @Composable
 fun TemplatePage(@DrawableRes backgroundId: Int= R.drawable.mobile_bg_01, content: @Composable () -> Unit) {
-    DemoAndroidTheme {
+    DemoandroidTheme {
         Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
             Box(modifier = Modifier.padding(innerPadding)) {
                 BackgroundImage(backgroundId)
